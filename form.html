@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Form Validation</h3>
+  <form onsubmit="return checkForm()">
+    Name: <input type="text" id="name"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+  <p id="msg"></p>
+
+  <script>
+    function checkForm() {
+      let n = document.getElementById("name").value;
+      if (n === "") {
+        document.getElementById("msg").innerHTML = "Name is required!";
+        return false;
+      }
+      document.getElementById("msg").innerHTML = "Form submitted!";
+      return false;
+    }
+  </script>
+</body>
+</html>
