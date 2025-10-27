@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Simple CRUD</h3>
+  <input id="item">
+  <button onclick="add()">Add</button>
+  <ul id="list"></ul>
+
+  <script>
+    function add() {
+      let val = document.getElementById("item").value;
+      if (val === "") return;
+      let li = document.createElement("li");
+      li.innerHTML = val + " <button onclick='this.parentNode.remove()'>Delete</button>";
+      document.getElementById("list").appendChild(li);
+      document.getElementById("item").value = "";
+    }
+  </script>
+</body>
+</html>
